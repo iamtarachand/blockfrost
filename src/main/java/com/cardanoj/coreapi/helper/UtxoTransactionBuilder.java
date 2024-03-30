@@ -1,15 +1,15 @@
 package com.cardanoj.coreapi.helper;
 
-import com.bloxbean.cardano.client.api.exception.ApiException;
-import com.bloxbean.cardano.client.api.model.ProtocolParams;
-import com.bloxbean.cardano.client.api.model.Utxo;
-import com.bloxbean.cardano.client.coinselection.UtxoSelectionStrategy;
-import com.bloxbean.cardano.client.exception.AddressExcepion;
-import com.bloxbean.cardano.client.metadata.Metadata;
-import com.bloxbean.cardano.client.transaction.model.MintTransaction;
-import com.bloxbean.cardano.client.transaction.model.PaymentTransaction;
-import com.bloxbean.cardano.client.transaction.model.TransactionDetailsParams;
-import com.bloxbean.cardano.client.transaction.spec.Transaction;
+import com.cardanoj.coreapi.exception.ApiException;
+import com.cardanoj.coreapi.model.ProtocolParams;
+import com.cardanoj.coreapi.model.Utxo;
+import com.cardanoj.coinselection.UtxoSelectionStrategy;
+import com.cardanoj.exception.AddressExcepion;
+import com.cardanoj.metadata.Metadata;
+import com.cardanoj.coreapi.transaction.model.MintTransaction;
+import com.cardanoj.coreapi.transaction.model.PaymentTransaction;
+import com.cardanoj.coreapi.transaction.model.TransactionDetailsParams;
+import com.cardanoj.transaction.spec.Transaction;
 
 import java.math.BigInteger;
 import java.util.List;

@@ -4,8 +4,8 @@ import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.ByteString;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.exception.CborDeserializationException;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
+import com.cardanoj.exception.CborDeserializationException;
+import com.cardanoj.exception.CborSerializationException;
 import lombok.Getter;
 
 import java.util.List;
@@ -15,8 +15,8 @@ import java.util.Objects;
 public class StakeDelegation implements Certificate {
     private final CertificateType type = CertificateType.STAKE_DELEGATION;
 
-    private StakeCredential stakeCredential;
-    private StakePoolId stakePoolId;
+    private final StakeCredential stakeCredential;
+    private final StakePoolId stakePoolId;
 
     public StakeDelegation(StakeCredential stakeCredential, StakePoolId stakePoolId) {
         this.stakeCredential = stakeCredential;

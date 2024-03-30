@@ -6,14 +6,14 @@ import com.cardanoj.crypto.exception.AddressFormatException;
 import static com.cardanoj.address.util.AddressEncoderDecoderUtil.readAddressType;
 
 public class ByronAddress {
-    private byte[] bytes;
-    private String address;
+    private final byte[] bytes;
+    private final String address;
 
     public ByronAddress(String address) {
         this.bytes = Base58.decode(address);
         AddressType addressType = readAddressType(this.bytes);
 
-        if (addressType == null || !AddressType.Byron.equals(addressType)) {
+        if (!AddressType.Byron.equals(addressType)) {
             throw new AddressFormatException("Invalid Byron address");
         }
 

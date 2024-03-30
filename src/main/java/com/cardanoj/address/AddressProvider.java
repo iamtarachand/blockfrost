@@ -641,10 +641,8 @@ public class AddressProvider {
 
         byte[] addressBytes = address.getBytes();
         byte header = addressBytes[0];
-        if ((header & (1 << 4)) == 0) { //Check if 4th bit is not set. If not set, it's pubkey hash
-            return true;
-        } else
-            return false;
+        //Check if 4th bit is not set. If not set, it's pubkey hash
+        return (header & (1 << 4)) == 0;
     }
 
     /**
@@ -681,15 +679,11 @@ public class AddressProvider {
         byte[] addressBytes = address.getBytes();
         byte header = addressBytes[0];
         if (addressType == AddressType.Reward) {
-            if ((header & (1 << 4)) == 0) { //Check if 4th bit is not set. If not set, it's stakekey hash
-                return true;
-            } else
-                return false;
+            //Check if 4th bit is not set. If not set, it's stakekey hash
+            return (header & (1 << 4)) == 0;
         } else { //For Base, Ptr
-            if ((header & (1 << 5)) == 0) { //Check if 5th bit is not set. If not set, it's stakekey hash
-                return true;
-            } else
-                return false;
+            //Check if 5th bit is not set. If not set, it's stakekey hash
+            return (header & (1 << 5)) == 0;
         }
     }
 

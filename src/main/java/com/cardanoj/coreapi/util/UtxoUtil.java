@@ -53,7 +53,7 @@ public class UtxoUtil {
                     }
                 } else {
                     Asset asset = new Asset(policyIdAssetName._2, utxoQty);
-                    MultiAsset multiAsset = new MultiAsset(policyIdAssetName._1, new ArrayList<>(Arrays.asList(asset)));
+                    MultiAsset multiAsset = new MultiAsset(policyIdAssetName._1, new ArrayList<>(List.of(asset)));
                     output.getValue().getMultiAssets().add(multiAsset);
                 }
             }

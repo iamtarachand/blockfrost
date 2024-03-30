@@ -35,11 +35,7 @@ public class PlutusUtil {
             ByteArrayInputStream bais = new ByteArrayInputStream(bs.getBytes());
             CborDecoder decoder = new CborDecoder(bais);
             DataItem di = decoder.decodeNext();
-            if (di instanceof ByteString) {
-                return true;
-            } else {
-                return false;
-            }
+            return di instanceof ByteString;
         } catch (Exception e) {
             return false;
         }

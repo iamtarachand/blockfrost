@@ -13,7 +13,7 @@ import java.util.Set;
  * Default implementation of TransactionProcessor which uses Backend service's TransactionService
  */
 public class DefaultTransactionProcessor implements TransactionProcessor {
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
 
     public DefaultTransactionProcessor(TransactionService transactionService) {
         this.transactionService = transactionService;

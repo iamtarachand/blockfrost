@@ -22,8 +22,8 @@ import java.util.List;
 @Getter
 @EqualsAndHashCode
 public class StakeCredential {
-    private StakeCredType type;
-    private byte[] hash;
+    private final StakeCredType type;
+    private final byte[] hash;
 
     private StakeCredential(StakeCredType type, byte[] hash) {
         this.type = type;

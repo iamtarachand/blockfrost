@@ -3,8 +3,8 @@ package com.cardanoj.transaction.spec.cert;
 import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.common.cbor.CborSerializationUtil;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
+import com.cardanoj.common.cbor.CborSerializationUtil;
+import com.cardanoj.exception.CborSerializationException;
 import lombok.*;
 
 import java.math.BigInteger;

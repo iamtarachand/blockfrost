@@ -10,7 +10,7 @@ import com.cardanoj.exception.CborSerializationException;
 import java.util.HashMap;
 
 public class CostMdls {
-    private java.util.Map<Language, CostModel> costMdlsMap;
+    private final java.util.Map<Language, CostModel> costMdlsMap;
 
     public CostMdls() {
         costMdlsMap = new HashMap<>();

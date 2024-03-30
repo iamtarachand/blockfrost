@@ -1,6 +1,6 @@
 package com.cardanoj.coreapi.helper.model;
 
-import com.bloxbean.cardano.client.util.HexUtil;
+import com.cardanoj.util.HexUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

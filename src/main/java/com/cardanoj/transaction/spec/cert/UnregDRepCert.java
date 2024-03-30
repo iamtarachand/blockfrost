@@ -3,9 +3,9 @@ package com.cardanoj.transaction.spec.cert;
 import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.address.Credential;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.transaction.util.CredentialSerializer;
+import com.cardanoj.address.Credential;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.transaction.util.CredentialSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
 
-import static com.bloxbean.cardano.client.common.cbor.CborSerializationUtil.getBigInteger;
+import static com.cardanoj.common.cbor.CborSerializationUtil.getBigInteger;
 
 @Data
 @AllArgsConstructor

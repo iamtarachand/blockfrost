@@ -10,5 +10,5 @@ public interface NetworkInfoService {
      * @return Genesis Info
      * @throws ApiException
      */
-    public Result<Genesis> getNetworkInfo() throws ApiException;
+    Result<Genesis> getNetworkInfo() throws ApiException;
 }

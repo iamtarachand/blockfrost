@@ -14,6 +14,8 @@ import lombok.*;
 import java.util.List;
 
 @Data
+@Setter
+@Getter
 public class ConstrPlutusData implements PlutusData {
     // see: https://github.com/input-output-hk/plutus/blob/1f31e640e8a258185db01fa899da63f9018c0e85/plutus-core/plutus-core/src/PlutusCore/Data.hs#L61
     // We don't directly serialize the alternative in the tag, instead the scheme is:
@@ -25,6 +27,10 @@ public class ConstrPlutusData implements PlutusData {
     private long alternative;
     @Setter
     private ListPlutusData data;
+
+    public ConstrPlutusData(ListPlutusData data) {
+        this.data = data;
+    }
 
     @Builder
     public static ConstrPlutusData of(long alternative, PlutusData... plutusDataList) {
@@ -97,5 +103,9 @@ public class ConstrPlutusData implements PlutusData {
         }
 
         return dataItem;
+    }
+
+    public static long getGeneralFormTag() {
+        return GENERAL_FORM_TAG;
     }
 }

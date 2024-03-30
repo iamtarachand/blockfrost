@@ -1,12 +1,12 @@
 package com.cardanoj.coreapi;
 
-import com.bloxbean.cardano.client.api.exception.ApiException;
-import com.bloxbean.cardano.client.api.model.EvaluationResult;
-import com.bloxbean.cardano.client.api.model.Result;
-import com.bloxbean.cardano.client.api.model.Utxo;
-import com.bloxbean.cardano.client.exception.CborRuntimeException;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.transaction.spec.Transaction;
+import com.cardanoj.coreapi.exception.ApiException;
+import com.cardanoj.coreapi.model.EvaluationResult;
+import com.cardanoj.coreapi.model.Result;
+import com.cardanoj.coreapi.model.Utxo;
+import com.cardanoj.exception.CborRuntimeException;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.transaction.spec.Transaction;
 
 import java.util.Collections;
 import java.util.List;

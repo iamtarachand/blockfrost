@@ -7,7 +7,7 @@ import com.cardanoj.coreapi.model.ProtocolParams;
 import com.cardanoj.coreapi.model.Result;
 
 public class DefaultProtocolParamsSupplier implements ProtocolParamsSupplier {
-    private EpochService epochService;
+    private final EpochService epochService;
 
     public DefaultProtocolParamsSupplier(EpochService epochService) {
         this.epochService = epochService;

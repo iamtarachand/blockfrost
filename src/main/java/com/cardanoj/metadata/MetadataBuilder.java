@@ -22,7 +22,7 @@ public class MetadataBuilder {
      * @return MetadataMap
      */
     public static MetadataMap createMap() {
-        return (MetadataMap) new CBORMetadataMap();
+        return new CBORMetadataMap();
     }
 
     /**

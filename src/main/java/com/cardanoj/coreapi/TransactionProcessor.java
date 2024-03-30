@@ -1,7 +1,7 @@
 package com.cardanoj.coreapi;
 
-import com.bloxbean.cardano.client.api.exception.ApiException;
-import com.bloxbean.cardano.client.api.model.Result;
+import com.cardanoj.coreapi.exception.ApiException;
+import com.cardanoj.coreapi.model.Result;
 
 /**
  * Implement this interface to provide transaction submission capability.

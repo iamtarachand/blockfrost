@@ -3,8 +3,8 @@ package com.cardanoj.transaction.spec.cert;
 import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.transaction.spec.governance.DRep;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.transaction.spec.governance.DRep;
 import lombok.*;
 
 import java.util.List;

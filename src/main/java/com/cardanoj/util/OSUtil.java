@@ -16,7 +16,7 @@ public class OSUtil {
             return true;
         } else {
             String javaVendor = System.getProperty("java.vm.vendor");
-            return javaVendor != null && "The Android Project".equalsIgnoreCase(javaVendor);
+            return "The Android Project".equalsIgnoreCase(javaVendor);
         }
     }
 }

@@ -19,7 +19,7 @@ import java.math.BigInteger;
 import java.util.Iterator;
 
 public class JsonNoSchemaToMetadataConverter {
-    private static ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     /**
      * Convert a valid json string to Metadata
@@ -51,8 +51,7 @@ public class JsonNoSchemaToMetadataConverter {
                 metadata.put(key, (CBORMetadataMap)cborValue);
             } else if (cborValue instanceof CBORMetadataList) {
                 metadata.put(key, (CBORMetadataList) cborValue);
-            } else if (cborValue instanceof BigInteger) {
-                BigInteger bi = (BigInteger)cborValue;
+            } else if (cborValue instanceof BigInteger bi) {
                 if(bi.compareTo(BigInteger.ZERO) == -1)
                     metadata.putNegative(key, (BigInteger) cborValue);
                 else
@@ -79,8 +78,7 @@ public class JsonNoSchemaToMetadataConverter {
                 metadataList.add((CBORMetadataMap) cborValue);
             } else if (cborValue instanceof CBORMetadataList) {
                 metadataList.add((CBORMetadataList) cborValue);
-            } else if (cborValue instanceof BigInteger) {
-                BigInteger bi = (BigInteger)cborValue;
+            } else if (cborValue instanceof BigInteger bi) {
                 if(bi.compareTo(BigInteger.ZERO) == -1)
                     metadataList.addNegative((BigInteger) cborValue);
                 else
@@ -108,8 +106,7 @@ public class JsonNoSchemaToMetadataConverter {
                 metadataMap.put(field, (CBORMetadataMap) cborValue);
             } else if (cborValue instanceof CBORMetadataList) {
                 metadataMap.put(field, (CBORMetadataList) cborValue);
-            } else if (cborValue instanceof BigInteger) {
-                BigInteger bi = (BigInteger)cborValue;
+            } else if (cborValue instanceof BigInteger bi) {
                 if(bi.compareTo(BigInteger.ZERO) == -1)
                     metadataMap.putNegative(field, (BigInteger) cborValue);
                 else
@@ -134,7 +131,7 @@ public class JsonNoSchemaToMetadataConverter {
             CBORMetadataList metadataList = parseArrayNode((ArrayNode)value);
             return metadataList;
         } else if(value instanceof TextNode) {
-            String textValue = ((TextNode)value).asText();
+            String textValue = value.asText();
             if(textValue.startsWith("0x")) { //Hex value
                 try {
                     byte[] hexValue = HexUtil.decodeHexString(textValue.substring(2));
@@ -146,7 +143,7 @@ public class JsonNoSchemaToMetadataConverter {
                 return textValue;
             }
         } else if(value instanceof NumericNode) {
-            BigInteger valueInt = ((NumericNode)value).bigIntegerValue();
+            BigInteger valueInt = value.bigIntegerValue();
             return valueInt;
         } else {
             throw new JsonMetadaException("Invalid value or value not recognized : " + value);

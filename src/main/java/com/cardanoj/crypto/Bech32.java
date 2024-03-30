@@ -69,11 +69,7 @@ public class Bech32 {
 
         // Validate data part
         String data = bech32EncodedString.substring(sepIndex + 1);
-        if (data.length() < CheckSumSize || data.chars().anyMatch(x -> B32Chars.indexOf(x) == -1)) {
-            return false;
-        }
-
-        return true;
+        return data.length() >= CheckSumSize && !data.chars().anyMatch(x -> B32Chars.indexOf(x) == -1);
     }
 
     private static boolean isValidHrp(String hrp) {

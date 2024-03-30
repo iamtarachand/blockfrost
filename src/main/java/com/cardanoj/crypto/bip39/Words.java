@@ -9,7 +9,7 @@ public enum Words {
 
     private final int bitLength;
 
-    private Words(int bitLength) {
+    Words(int bitLength) {
         this.bitLength = bitLength;
     }
 

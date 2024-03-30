@@ -26,7 +26,7 @@ public enum CertificateType {
     UNREG_DREP_CERT(17),
     UPDATE_DREP_CERT(18);
 
-    private int value;
+    private final int value;
     CertificateType(int value) {
         this.value = value;
     }

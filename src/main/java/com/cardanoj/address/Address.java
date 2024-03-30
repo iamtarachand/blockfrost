@@ -13,11 +13,11 @@ import static com.cardanoj.address.util.AddressEncoderDecoderUtil.*;
  * Address class represents Shelley address
  */
 public class Address {
-    private String prefix;
-    private byte[] bytes;
+    private final String prefix;
+    private final byte[] bytes;
     private String address;
-    private AddressType addressType;
-    private Network network;
+    private final AddressType addressType;
+    private final Network network;
 
     /**
      * Create Address from a byte array

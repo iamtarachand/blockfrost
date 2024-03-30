@@ -1,16 +1,16 @@
 package com.cardanoj.coreapi.util;
 
-import com.bloxbean.cardano.client.crypto.KeyGenUtil;
-import com.bloxbean.cardano.client.crypto.Keys;
-import com.bloxbean.cardano.client.crypto.SecretKey;
-import com.bloxbean.cardano.client.crypto.VerificationKey;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.transaction.spec.Policy;
-import com.bloxbean.cardano.client.transaction.spec.script.RequireTimeBefore;
-import com.bloxbean.cardano.client.transaction.spec.script.ScriptAll;
-import com.bloxbean.cardano.client.transaction.spec.script.ScriptAtLeast;
-import com.bloxbean.cardano.client.transaction.spec.script.ScriptPubkey;
-import com.bloxbean.cardano.client.util.Tuple;
+import com.cardanoj.crypto.KeyGenUtil;
+import com.cardanoj.crypto.Keys;
+import com.cardanoj.crypto.SecretKey;
+import com.cardanoj.crypto.VerificationKey;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.transaction.spec.Policy;
+import com.cardanoj.transaction.spec.script.RequireTimeBefore;
+import com.cardanoj.transaction.spec.script.ScriptAll;
+import com.cardanoj.transaction.spec.script.ScriptAtLeast;
+import com.cardanoj.transaction.spec.script.ScriptPubkey;
+import com.cardanoj.util.Tuple;
 
 import java.util.ArrayList;
 import java.util.List;

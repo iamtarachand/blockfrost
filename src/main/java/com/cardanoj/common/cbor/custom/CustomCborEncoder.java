@@ -12,7 +12,7 @@ import co.nstant.in.cbor.model.Tag;
 import java.io.OutputStream;
 
 public class CustomCborEncoder extends CborEncoder {
-    private CustomMapEncoder customMapEncoder;
+    private final CustomMapEncoder customMapEncoder;
 
     public CustomCborEncoder(OutputStream outputStream) {
         super(outputStream);
@@ -20,19 +20,19 @@ public class CustomCborEncoder extends CborEncoder {
     }
 
     public void encode(DataItem dataItem) throws CborException {
-        if (((DataItem)dataItem).getMajorType().equals(MajorType.MAP)) {
+        if (dataItem.getMajorType().equals(MajorType.MAP)) {
             if (dataItem == null) {
                 dataItem = SimpleValue.NULL;
             }
 
-            if (((DataItem)dataItem).hasTag()) {
-                Tag tagDi = ((DataItem)dataItem).getTag();
+            if (dataItem.hasTag()) {
+                Tag tagDi = dataItem.getTag();
                 this.encode(tagDi);
             }
 
             this.customMapEncoder.encode((Map)dataItem);
         } else {
-            super.encode((DataItem)dataItem);
+            super.encode(dataItem);
         }
 
     }

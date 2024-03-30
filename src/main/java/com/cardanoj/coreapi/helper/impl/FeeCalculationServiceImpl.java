@@ -34,8 +34,8 @@ public class FeeCalculationServiceImpl implements FeeCalculationService {
     //Here the goal is to make the fee calculation successful by reducing cost during transaction building.
     private final static BigInteger MIN_DUMMY_FEE = BigInteger.valueOf(100000);
 
-    private TransactionBuilder transactionBuilder;
-    private ProtocolParamsSupplier protocolParamsSupplier;
+    private final TransactionBuilder transactionBuilder;
+    private final ProtocolParamsSupplier protocolParamsSupplier;
 
     public FeeCalculationServiceImpl(UtxoSupplier utxoSupplier, ProtocolParamsSupplier protocolParamsSupplier) {
         this.transactionBuilder = new TransactionBuilder(utxoSupplier, protocolParamsSupplier);
@@ -68,12 +68,12 @@ public class FeeCalculationServiceImpl implements FeeCalculationService {
         String txnCBORHash;
         try {
             //Build transaction
-            txnCBORHash = transactionBuilder.createSignedTransaction(Arrays.asList(clonePaymentTransaction), detailsParams, metadata);
+            txnCBORHash = transactionBuilder.createSignedTransaction(List.of(clonePaymentTransaction), detailsParams, metadata);
         } catch (InsufficientBalanceException e) {
             if (LOVELACE.equals(clonePaymentTransaction.getUnit())) {
                 clonePaymentTransaction.setFee(MIN_DUMMY_FEE);
                 clonePaymentTransaction.setAmount(clonePaymentTransaction.getAmount().subtract(MIN_DUMMY_FEE));
-                txnCBORHash = transactionBuilder.createSignedTransaction(Arrays.asList(clonePaymentTransaction), detailsParams, metadata);
+                txnCBORHash = transactionBuilder.createSignedTransaction(List.of(clonePaymentTransaction), detailsParams, metadata);
             } else
                 throw e;
         }
@@ -211,6 +211,6 @@ public class FeeCalculationServiceImpl implements FeeCalculationService {
 
     private BigInteger doFeeCalculationFromTxnSize(byte[] bytes, ProtocolParams protocolParams) {
         //a + b x size
-        return BigInteger.valueOf((protocolParams.getMinFeeA() * bytes.length) + protocolParams.getMinFeeB());
+        return BigInteger.valueOf(((long) protocolParams.getMinFeeA() * bytes.length) + protocolParams.getMinFeeB());
     }
 }

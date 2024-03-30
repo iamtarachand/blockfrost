@@ -4,7 +4,7 @@ import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.SimpleValue;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.transaction.spec.ProtocolParamUpdate;
+import com.cardanoj.transaction.spec.ProtocolParamUpdate;
 import lombok.*;
 
 import java.util.List;

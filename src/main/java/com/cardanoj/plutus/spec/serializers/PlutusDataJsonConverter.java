@@ -17,7 +17,7 @@ import static com.cardanoj.plutus.spec.serializers.PlutusDataJsonKeys.*;
  * https://github.com/input-output-hk/cardano-node/blob/master/cardano-api/src/Cardano/Api/ScriptData.hs#L254
  */
 public class PlutusDataJsonConverter {
-    private static ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);;
+    private static final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     /**
      * Convert a compatible json string to {@link PlutusData}

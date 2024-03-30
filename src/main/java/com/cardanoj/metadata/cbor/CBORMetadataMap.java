@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import static com.cardanoj.metadata.cbor.MetadataHelper.*;
 
 public class CBORMetadataMap implements MetadataMap {
-    private Map map;
+    private final Map map;
 
     public CBORMetadataMap() {
         map = new Map();

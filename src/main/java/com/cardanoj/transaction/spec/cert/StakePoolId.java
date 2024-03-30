@@ -1,9 +1,9 @@
 package com.cardanoj.transaction.spec.cert;
 
-import com.bloxbean.cardano.client.crypto.Bech32;
-import com.bloxbean.cardano.client.crypto.Blake2bUtil;
-import com.bloxbean.cardano.client.crypto.VerificationKey;
-import com.bloxbean.cardano.client.util.HexUtil;
+import com.cardanoj.crypto.Bech32;
+import com.cardanoj.crypto.Blake2bUtil;
+import com.cardanoj.crypto.VerificationKey;
+import com.cardanoj.util.HexUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
@@ -13,7 +13,7 @@ import java.util.Objects;
 public class StakePoolId {
     private static final String POOL = "pool";
 
-    private byte[] poolKeyHash;
+    private final byte[] poolKeyHash;
 
     public StakePoolId(byte[] poolKeyHash) {
         this.poolKeyHash = poolKeyHash;

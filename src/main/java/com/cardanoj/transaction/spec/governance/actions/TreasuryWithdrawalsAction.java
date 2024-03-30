@@ -4,10 +4,10 @@ import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.Map;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.address.util.AddressUtil;
-import com.bloxbean.cardano.client.common.cbor.CborSerializationUtil;
-import com.bloxbean.cardano.client.exception.CborRuntimeException;
-import com.bloxbean.cardano.client.transaction.spec.Withdrawal;
+import com.cardanoj.address.util.AddressUtil;
+import com.cardanoj.common.cbor.CborSerializationUtil;
+import com.cardanoj.exception.CborRuntimeException;
+import com.cardanoj.transaction.spec.Withdrawal;
 import lombok.*;
 
 import java.math.BigInteger;
@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
-import static com.bloxbean.cardano.client.common.cbor.CborSerializationUtil.toBytes;
+import static com.cardanoj.common.cbor.CborSerializationUtil.toBytes;
 
 /**
  * {@literal

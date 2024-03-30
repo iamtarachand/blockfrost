@@ -1,14 +1,14 @@
 package com.cardanoj.coreapi.util;
 
-import com.bloxbean.cardano.client.api.model.Amount;
-import com.bloxbean.cardano.client.transaction.spec.MultiAsset;
-import com.bloxbean.cardano.client.transaction.spec.Value;
+import com.cardanoj.coreapi.model.Amount;
+import com.cardanoj.transaction.spec.MultiAsset;
+import com.cardanoj.transaction.spec.Value;
 import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.bloxbean.cardano.client.common.CardanoConstants.LOVELACE;
+import static com.cardanoj.common.CardanoConstants.LOVELACE;
 
 /**
  * Utility class for {@link Value}
@@ -25,7 +25,7 @@ public class ValueUtil {
         amounts.add(new Amount(LOVELACE, value.getCoin()));
         for (MultiAsset multiAsset : value.getMultiAssets()) {
             String policyId = multiAsset.getPolicyId();
-            for (com.bloxbean.cardano.client.transaction.spec.Asset asset : multiAsset.getAssets()) {
+            for (com.cardanoj.transaction.spec.Asset asset : multiAsset.getAssets()) {
                 amounts.add(new Amount(policyId + asset.getNameAsHex().replace("0x", ""), asset.getValue()));
             }
         }

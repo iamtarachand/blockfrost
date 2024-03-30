@@ -13,8 +13,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class Credential {
     //key hash or script hash
-    private byte[] bytes;
-    private CredentialType type;
+    private final byte[] bytes;
+    private final CredentialType type;
 
     private Credential(byte[] bytes, CredentialType type) {
         this.bytes = bytes;

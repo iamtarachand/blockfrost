@@ -26,7 +26,7 @@ public class CustomMapEncoder extends MapEncoder {
         if (map.isChunked()) {
             this.encodeTypeChunked(MajorType.MAP);
         } else {
-            this.encodeTypeAndLength(MajorType.MAP, (long)keys.size());
+            this.encodeTypeAndLength(MajorType.MAP, keys.size());
         }
 
         if (!keys.isEmpty()) {
@@ -74,8 +74,8 @@ public class CustomMapEncoder extends MapEncoder {
 
         while(var6.hasNext()) {
             java.util.Map.Entry<byte[], byte[]> entry = (java.util.Map.Entry)var6.next();
-            this.write((byte[])entry.getKey());
-            this.write((byte[])entry.getValue());
+            this.write(entry.getKey());
+            this.write(entry.getValue());
         }
 
     }

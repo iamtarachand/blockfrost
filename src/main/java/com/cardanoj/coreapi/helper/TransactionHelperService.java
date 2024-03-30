@@ -1,19 +1,20 @@
 package com.cardanoj.coreapi.helper;
 
-import com.bloxbean.cardano.client.api.TransactionProcessor;
-import com.bloxbean.cardano.client.api.exception.ApiException;
-import com.bloxbean.cardano.client.api.helper.model.TransactionResult;
-import com.bloxbean.cardano.client.api.model.Result;
-import com.bloxbean.cardano.client.exception.AddressExcepion;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.metadata.Metadata;
-import com.bloxbean.cardano.client.transaction.model.MintTransaction;
-import com.bloxbean.cardano.client.transaction.model.PaymentTransaction;
-import com.bloxbean.cardano.client.transaction.model.TransactionDetailsParams;
-import com.bloxbean.cardano.client.util.HexUtil;
+import com.cardanoj.coreapi.TransactionProcessor;
+import com.cardanoj.coreapi.exception.ApiException;
+import com.cardanoj.coreapi.helper.model.TransactionResult;
+import com.cardanoj.coreapi.model.Result;
+import com.cardanoj.exception.AddressExcepion;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.metadata.Metadata;
+import com.cardanoj.coreapi.transaction.model.MintTransaction;
+import com.cardanoj.coreapi.transaction.model.PaymentTransaction;
+import com.cardanoj.coreapi.transaction.model.TransactionDetailsParams;
+import com.cardanoj.util.HexUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
 @Deprecated(since = "0.5.0")
 public class TransactionHelperService {
 
-    private TransactionProcessor transactionProcessor;
+    private final TransactionProcessor transactionProcessor;
     private TransactionBuilder transactionBuilder;
 
     /**
@@ -51,7 +52,7 @@ public class TransactionHelperService {
      */
     public Result<TransactionResult> transfer(PaymentTransaction paymentTransaction, TransactionDetailsParams detailsParams)
             throws ApiException, AddressExcepion, CborSerializationException {
-        return transfer(Arrays.asList(paymentTransaction), detailsParams, null);
+        return transfer(Collections.singletonList(paymentTransaction), detailsParams, null);
     }
 
     /**
@@ -67,7 +68,7 @@ public class TransactionHelperService {
      */
     public Result<TransactionResult> transfer(PaymentTransaction paymentTransaction, TransactionDetailsParams detailsParams, Metadata metadata)
             throws ApiException, AddressExcepion, CborSerializationException {
-        return transfer(Arrays.asList(paymentTransaction), detailsParams, metadata);
+        return transfer(Collections.singletonList(paymentTransaction), detailsParams, metadata);
     }
 
     /**

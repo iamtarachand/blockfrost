@@ -4,16 +4,16 @@ import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.ByteString;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.exception.CborSerializationException;
-import com.bloxbean.cardano.client.util.HexUtil;
+import com.cardanoj.exception.CborSerializationException;
+import com.cardanoj.util.HexUtil;
 import lombok.*;
 
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
 
-import static com.bloxbean.cardano.client.common.cbor.CborSerializationUtil.getBigInteger;
-import static com.bloxbean.cardano.client.common.cbor.CborSerializationUtil.toHex;
+import static com.cardanoj.common.cbor.CborSerializationUtil.getBigInteger;
+import static com.cardanoj.common.cbor.CborSerializationUtil.toHex;
 
 @Data
 @AllArgsConstructor

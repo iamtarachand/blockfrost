@@ -4,8 +4,8 @@ package com.cardanoj.common.model;
 import java.util.Objects;
 
 public class Network {
-    private int networkId;
-    private long protocolMagic;
+    private final int networkId;
+    private final long protocolMagic;
 
     public Network(int networkId, long protocolMagic) {
         this.networkId = networkId;
@@ -32,7 +32,7 @@ public class Network {
     }
 
     public int hashCode() {
-        return Objects.hash(new Object[]{super.hashCode(), this.networkId, this.protocolMagic});
+        return Objects.hash(super.hashCode(), this.networkId, this.protocolMagic);
     }
 
     public String toString() {

@@ -3,7 +3,7 @@ package com.cardanoj.transaction.spec.script;
 import co.nstant.in.cbor.model.Array;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import com.bloxbean.cardano.client.exception.CborDeserializationException;
+import com.cardanoj.exception.CborDeserializationException;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -22,7 +22,7 @@ import static co.nstant.in.cbor.model.MajorType.*;
 import static com.cardanoj.metadata.cbor.MetadataHelper.*;
 
 public class CBORMetadata implements Metadata {
-    private Map map;
+    private final Map map;
 
     public CBORMetadata() {
         map = new Map();

@@ -36,10 +36,10 @@ public class Account {
     private String enterpriseAddress;
     private String stakeAddress;
     private String drepId;
-    private Network network;
+    private final Network network;
 
     @JsonIgnore
-    private DerivationPath derivationPath;
+    private final DerivationPath derivationPath;
 
     /**
      * Create a new random mainnet account.

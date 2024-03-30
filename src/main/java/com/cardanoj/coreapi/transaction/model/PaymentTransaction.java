@@ -1,7 +1,7 @@
 package com.cardanoj.coreapi.transaction.model;
 
-import com.bloxbean.cardano.client.account.Account;
-import com.bloxbean.cardano.client.api.model.Utxo;
+import com.cardanoj.coreapi.account.Account;
+import com.cardanoj.coreapi.model.Utxo;
 import lombok.*;
 
 import java.math.BigInteger;

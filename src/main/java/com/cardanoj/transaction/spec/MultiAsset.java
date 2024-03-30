@@ -63,7 +63,7 @@ public class MultiAsset {
                 .collect(Collectors.groupingBy(MultiAsset::getPolicyId))
                 .entrySet()
                 .stream()
-                .map(entry -> entry.getValue().stream().reduce(MultiAsset.builder().policyId(entry.getKey()).assets(Arrays.asList()).build(), MultiAsset::plus))
+                .map(entry -> entry.getValue().stream().reduce(MultiAsset.builder().policyId(entry.getKey()).assets(List.of()).build(), MultiAsset::plus))
                 .collect(Collectors.toList());
     }
 

@@ -11,7 +11,9 @@ import com.cardanoj.exception.CborRuntimeException;
 import com.cardanoj.exception.CborSerializationException;
 import com.cardanoj.util.HexUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import lombok.NonNull;
+import lombok.*;
 
 public interface PlutusData {
 
@@ -25,7 +27,6 @@ public interface PlutusData {
 //    big_int = int / big_uint / big_nint ; New
 //    big_uint = #6.2(bounded_bytes) ; New
 //    big_nint = #6.3(bounded_bytes) ; New
-
     static PlutusData unit() {
         return ConstrPlutusData.builder()
                 .data(ListPlutusData.of())
@@ -47,7 +48,7 @@ public interface PlutusData {
         } else if (dataItem instanceof Array) {
             if (dataItem.getTag() == null) {
                 return ListPlutusData.deserialize((Array) dataItem);
-            } else { //Tag found .. try Constr
+            } else {
                 return ConstrPlutusData.deserialize(dataItem);
             }
         } else if (dataItem instanceof Map) {

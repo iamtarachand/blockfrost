@@ -1,16 +1,16 @@
 package com.cardanoj.transaction.spec.governance.actions;
 
 import co.nstant.in.cbor.model.*;
-import com.bloxbean.cardano.client.address.Credential;
-import com.bloxbean.cardano.client.spec.UnitInterval;
-import com.bloxbean.cardano.client.transaction.util.CredentialSerializer;
+import com.cardanoj.address.Credential;
+import com.cardanoj.spec.UnitInterval;
+import com.cardanoj.transaction.util.CredentialSerializer;
 import lombok.*;
 
 import java.util.Map;
 import java.util.*;
 
-import static com.bloxbean.cardano.client.common.cbor.CborSerializationUtil.toInt;
-import static com.bloxbean.cardano.client.transaction.util.RationalNumberUtil.toUnitInterval;
+import static com.cardanoj.common.cbor.CborSerializationUtil.toInt;
+import static com.cardanoj.transaction.util.RationalNumberUtil.toUnitInterval;
 
 /**
  * {@literal

@@ -1,9 +1,9 @@
 package com.cardanoj.backend.api;
 
-import com.cardanoj.api.common.OrderEnum;
-import com.cardanoj.api.exception.ApiException;
-import com.cardanoj.api.model.Result;
-import com.cardanoj.api.model.Utxo;
+import com.cardanoj.coreapi.common.OrderEnum;
+import com.cardanoj.coreapi.exception.ApiException;
+import com.cardanoj.coreapi.model.Result;
+import com.cardanoj.coreapi.model.Utxo;
 
 import java.util.List;
 
